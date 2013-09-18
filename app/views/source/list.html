@@ -1,0 +1,28 @@
+<div id="list-search">
+    <div ng-controller="SourceDataCtrl">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span2">
+                <!--Sidebar content-->
+            </div>
+            <div class="span10">
+                <table class="table table-striped">
+                    {{sourceResult.success.response.numFound}}
+                    <tr >
+                        <th>Source</th>
+                        <th>Type</th>
+                        <th>Niveau de Partage</th>
+                    </tr>
+                    <tr ng-repeat="source in sourceResult.success.response.docs">
+                        <td><a href="{{source.source_url_s}}">{{source.source_url_s}}</a></td>
+                        <td>{{source.source_type_s}}</td>
+                        <td>{{source.source_level_sharing_i}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+

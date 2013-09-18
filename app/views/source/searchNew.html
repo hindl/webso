@@ -1,0 +1,21 @@
+<div id="webso-search-new-feeds">
+    <div ng-controller="SolrCtrl">
+    <div class="container-fluid">
+        <div class="row-fluid">
+                <form class="form-horizontal" ng-submit="doSearch()">
+                    <input type="text" placeholder="Chercher" ng-model="searchTerm">
+                    <button class="btn" ng-click="doSearch()"><i class="icon-search"></i>Search</button>
+                </form>
+
+                <table class="table table-striped">
+                    <tr ng-repeat="entrie in googleFeedResult.responseData.entries">
+                        <td><a href="{{entrie.url}}">{{entrie.url}}</a></td>
+                        <td ng-bind-html="entrie.title"></td>
+                        <td ng-bind-html="entrie.contentSnippet"></td>
+                    </tr>
+                </table>
+                </table>
+        </div>
+    </div>
+    </div>
+</div>
